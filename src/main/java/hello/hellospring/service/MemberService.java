@@ -19,6 +19,18 @@ public class MemberService {
 
     //회원가입,같은 이름이 있는 중복 회원 안됨.
     public Long join(Member member){
+        //공통공통사항 = 시간을 측정하는 로직
+//        long start = System.currentTimeMillis();
+//        try {
+//            validateDuplicateMember(member);
+//            memberRepository.save(member);
+//            return member.getId();
+//        }finally {
+//            long finish = System.currentTimeMillis();
+//            long timeMs = finish - start;
+//            System.out.println("join = "+ timeMs + "ms");
+//        }
+
         //중복회원 검증
         validateDuplicateMember(member);
         memberRepository.save(member);
